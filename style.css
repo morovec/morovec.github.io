@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #232526; /* Fallback */
+    background-image: linear-gradient(to top, #232526, #414345); /* Dark gray gradient */
+    background-attachment: fixed;
+    color: #ecf0f1; /* Light gray text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #95a5a6; /* Gray accent */
+}
+
+#header-text {
+    font-size: 2.5rem;
+    display: inline-block; /* Prevents jerking */
+    min-height: 2.5rem;   /* Prevents jerking */
+    color: #ff4136; /* Red text */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(105, 105, 105, 0.6); /* Clean gray with transparency */
+    padding: 1rem;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+nav a {
+    color: #fffacd; /* Lighter, whiter yellow */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    border-color: #ff5e57; /* Brighter scarlet border */
+    background-color: rgba(255, 94, 87, 0.1); /* Light scarlet background */
+}
+
+main {
+    padding: 2rem;
+    flex: 1 0 auto; /* Make main content grow */
+}
+
+section {
+    display: none; /* Скрываем все секции по умолчанию */
+    margin-bottom: 3rem;
+    background-color: rgba(105, 105, 105, 0.4); /* Clean gray with transparency */
+    padding: 2rem;
+    border: 2px solid #95a5a6; /* Gray accent */
+    box-shadow: 5px 5px #7f8c8d; /* Grayish shadow */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+section.active {
+    display: block; /* Показываем только активную секцию */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fffacd; /* Lighter, whiter yellow */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.project-list {
+    display: block;
+}
+
+.arts-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 1.5rem;
+    max-width: 900px; /* Limit overall gallery width */
+    margin: 0 auto; /* Center the gallery */
+}
+
+.project-item {
+    background-color: rgba(105, 105, 105, 0.3); /* Clean gray with transparency */
+    padding: 1.5rem;
+    border: 1px solid #95a5a6; /* Gray accent */
+    margin-bottom: 1.5rem; /* Add space between full-width cards */
+}
+
+.project-icon {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #fffacd;
+}
+
+.arts-gallery a {
+    display: block; /* Make the link a block-level element */
+    overflow: visible; /* Allow the scaled image to show outside the link area */
+    border-radius: 8px; /* Match the image's border-radius */
+    position: relative;
+    z-index: 1;
+    transition: z-index 0s 0.3s; /* Delay z-index change to prevent flickering */
+}
+
+.arts-gallery a:hover {
+    z-index: 10;
+    transition-delay: 0s;
+}
+
+.arts-gallery img {
+    width: 100%;
+    height: 250px; /* Fixed height to make images smaller */
+    object-fit: cover; /* Ensure image covers the area, cropping if necessary */
+    display: block;
+    border: 2px solid #95a5a6;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.arts-gallery img:hover {
+    transform: scale(1.4);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #bdc3c7; /* Gray accent */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(105, 105, 105, 0.5); /* Clean gray with transparency */
+    border-top: 3px solid #95a5a6; /* Gray accent */
+    margin-top: 2rem;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+.about-avatar {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #fffacd;
+}
+
+#about::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.project-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .arts-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Disable hover zoom on smaller screens */
+    .arts-gallery a:hover {
+        z-index: 1; /* Keep z-index the same */
+    }
+
+    .arts-gallery img:hover {
+        transform: none; /* Disable zoom */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    #header-text {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    .about-avatar, .project-icon {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+    }
+
+    .arts-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-item {
+        text-align: center;
+    }
+}

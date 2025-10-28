@@ -89,6 +89,15 @@ h2 {
     margin: 0 auto; /* Center the gallery */
 }
 
+a {
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.project-list a:hover {
+  text-decoration: none;
+}
+
 .project-item {
     background-color: rgba(105, 105, 105, 0.3); /* Clean gray with transparency */
     padding: 1.5rem;

@@ -72,7 +72,7 @@ section.active {
 
 h2 {
     font-size: 2rem;
-    color: #fffacd; /* Lighter, whiter yellow */
+    color: #fffacd;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -83,10 +83,10 @@ h2 {
 
 .arts-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: 900px; /* Limit overall gallery width */
-    margin: 0 auto; /* Center the gallery */
+    max-width: 900px; 
+    margin: 0 auto; 
 }
 
 a {
@@ -99,10 +99,10 @@ a {
 }
 
 .project-item {
-    background-color: rgba(105, 105, 105, 0.3); /* Clean gray with transparency */
+    background-color: rgba(105, 105, 105, 0.3);
     padding: 1.5rem;
-    border: 1px solid #95a5a6; /* Gray accent */
-    margin-bottom: 1.5rem; /* Add space between full-width cards */
+    border: 1px solid #95a5a6; 
+    margin-bottom: 1.5rem; 
 }
 
 .project-icon {
